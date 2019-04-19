@@ -51,7 +51,7 @@ S21(1,2) = 78;
 S22(1,1) = 0.89;
 S22(1,2) = -26.5;
 %}
-%{
+
 % Example 7c Input Data in place of prompts:
 S11(1,1) = 0.7;
 S11(1,2) = -50;
@@ -64,8 +64,8 @@ S21(1,2) = 120;
 
 S22(1,1) = 0.6;
 S22(1,2) = 80;
-%}
 
+%{
 % Example 8 Input Data in place of prompts:
 S11(1,1) = 0.69;
 S11(1,2) = -78;
@@ -78,6 +78,7 @@ S21(1,2) = 123;
 
 S22(1,1) = 0.84;
 S22(1,2) = -25;
+%}
 
 % Redefining of input variables as complex numbers:
 S11 = S11(1,1)*exp(1i*S11(1,2)*pi/180);
@@ -127,13 +128,13 @@ end
 % Displaying Information
 fprintf('\nInfo:\n');
 fprintf('C_L Mag = %4.4d\n',abs(CL));
-fprintf('C_L Phase = %4.4d degrees\n',angle(CL));
+fprintf('C_L Phase = %4.4d degrees\n',angle(CL)*180/pi);
 fprintf('r_L = %4.4d\n',rL);
 fprintf('C_S Mag = %4.4d\n',abs(CS));
-fprintf('C_S Phase = %4.4d degrees\n',angle(CS));
+fprintf('C_S Phase = %4.4d degrees\n',angle(CS)*180/pi);
 fprintf('r_S = %4.4d\n',rS);
 fprintf('K = %4.4d\n',K);
-fprintf('Delta = %4.4d\n',Delta);
+fprintf('|Delta| = %4.4d\n',Delta);
 fprintf('mu_1 = %4.4d\n',mu1);
 fprintf('mu_2 = %4.4d\n',mu2);
 
